@@ -1,8 +1,11 @@
 const mongoose = require('mongoose')
 
-const mongURI = "mongodb://127.0.0.1:27017"
+console.log(process.env.DB_URL)
+const mongURI = process.env.DB_URL;
+
 
 const connectToMongo = () => {
     mongoose.connect(mongURI)
 }
+
 module.exports = connectToMongo;
